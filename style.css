@@ -1,97 +1,97 @@
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-:root{
-  --header-color:#f4d35e;
-  --bg-color:#faf0ca;
-  --text-color:#0d3b66;
+:root {
+  --header-color: #f4d35e;
+  --bg-color: #faf0ca;
+  --text-color: #0d3b66;
 }
-body{
+body {
   font-family: Arial, sans-serif;
-  background-color:var(--bg-color);
+  background-color: var(--bg-color);
   width: 100vw;
 }
 
-header{
-  background-color:var(--header-color);
+header {
+  background-color: var(--header-color);
   padding: 20px;
   color: var(--text-color);
 }
-header h2{
+header h2 {
   font-size: 36px;
 }
 
-
-main{
+main {
   min-height: 80vh;
   padding: 20px;
   max-width: 800px;
-  margin:0 auto;
+  margin: 0 auto;
 }
 
-main form{
+main form {
   display: flex;
   justify-content: center;
 }
 
-form input[type="text"]{
+form input[type="text"] {
   flex-grow: 1;
 }
 
-form input[type="text"], button[type="submit"]{
+form input[type="text"],
+button[type="submit"] {
   border: none;
   font-size: 16px;
   font-weight: 500;
   border-radius: 5px;
-  padding: calc(20px/2);
+  padding: calc(20px / 2);
 }
 
-form button[type="submit"]{
+form button[type="submit"] {
   background-color: var(--header-color);
   color: var(--text-color);
   margin-left: 10px;
   cursor: pointer;
 }
 
-footer{
+footer {
   background-color: var(--header-color);
-  color:var(--text-color);
+  color: var(--text-color);
   padding: 20px;
- text-align: center;
- position: fixed;
- width: 100%;
+  text-align: center;
+  position: fixed;
+  width: 100%;
 }
-footer p{
+footer p {
   font-size: 18px;
   font-weight: 600;
 }
 
-.result{
+.result {
   background-color: var(--bg-color);
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   margin-top: 20px;
   border-radius: 7px;
   padding: 20px;
 }
-.result p{
-  margin-top:10px;
 
+.result p {
+  margin-top: 10px;
 }
 
-.result p[class="partofspeech"]{
+.result p[class="partofspeech"] {
   font-style: italic;
   color: var(--text-color);
   margin-top: 2px;
 }
 
-.result div{
+.result div {
   margin-top: 20px;
 }
 
-.result div a{
+.result div a {
   background-color: var(--header-color);
   color: var(--text-color);
   margin-left: 10px;
@@ -100,21 +100,51 @@ footer p{
   font-size: 16px;
   font-weight: 500;
   border-radius: 5px;
-  padding: calc(20px/2);
+  padding: calc(20px / 2);
   text-decoration: none;
-  
 }
 
-.result li{
+.result li {
   padding: 5px;
   margin-left: 10px;
 }
+.loader {
+  border: 2px solid var(--header-color);
+  width: 48px;
+  height: 48px;
+  background: var(--text-color);
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+}
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 24px solid;
+  border-color: transparent var(--header-color);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
 
-@media screen and (max-width:320px) {
-  main form{
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  main form {
     flex-direction: column;
   }
-  button[type="submit"]{
+  button[type="submit"] {
     margin-left: 0px;
     margin-top: 10px;
   }

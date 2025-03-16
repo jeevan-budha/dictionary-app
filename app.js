@@ -10,7 +10,7 @@ form.addEventListener("submit", (evt) => {
 
 const getwordInfo = async (word) => {
   try {
-    resultDiv.innerHTML =`fetching Data...................`;
+    resultDiv.innerHTML =`<span class="loader"></span>`;
     const dictionaryAPi = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
     const response = await fetch(dictionaryAPi);
     const finaData = await response.json();
