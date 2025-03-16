@@ -1,0 +1,1 @@
+// This is dictionary app where you find meaning and full detials about the word meaning
