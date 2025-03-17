@@ -26,7 +26,7 @@ const getwordInfo = async (word) => {
   }</p>
   <p><strong>Antonyms:</strong></p>
   `;
-
+  // console.log(finaData);
     //fetching antoyms
     if (definitions.antonyms.length === 0) {
       resultDiv.innerHTML += `<span> Not Found</span>`;
@@ -36,6 +36,15 @@ const getwordInfo = async (word) => {
       }
     }
 
+    //fetching synonyms
+    resultDiv.innerHTML +=`<p><strong>Synonyms: </strong></p>`
+    if(finaData[0].meanings[0].synonyms.length===0){
+      resultDiv.innerHTML +=`<span>Not Foud</span>`
+    }else{
+      for(let j of finaData[0].meanings[0].synonyms){
+        resultDiv.innerHTML += `<li>${j}</li>`
+      }
+    }
     // adding read more button
     resultDiv.innerHTML += `<div><a href ="${finaData[0].sourceUrls}" target ="_blank">ReadMore</a></div>`;
   } catch (error) {
